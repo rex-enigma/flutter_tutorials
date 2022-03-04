@@ -15,10 +15,17 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Flutter layout demo'),
         ),
-        body: const Center(
-          child: Text(
-            'Hello World',
-            style: TextStyle(fontSize: 32),
+        body: Center(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Expanded(child: Image.asset('images/pic1.jpg')),
+              Expanded(
+                flex: 2,
+                child: Image.asset('images/pic2.jpg'),
+              ),
+              Expanded(child: Image.asset('images/pic3.jpg')),
+            ],
           ),
         ),
       ),
