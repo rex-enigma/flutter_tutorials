@@ -33,16 +33,13 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-        Icon(
-          Icons.star,
-          color: Colors.red[500],
-        ),
-        const Text('41'),
+        FavoriteWidget(),
       ],
     ),
   );
 
-  Column _buildButtonColumn({required Color color, required IconData icon, required String label}) {
+  Column _buildButtonColumn(
+      {required Color color, required IconData icon, required String label}) {
     return Column(
       children: [
         Icon(
@@ -65,10 +62,11 @@ class MyApp extends StatelessWidget {
   }
 
   late Widget buttonSection = Row(
-    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
       _buildButtonColumn(color: Colors.blue, icon: Icons.call, label: 'CALL'),
-      _buildButtonColumn(color: Colors.blue, icon: Icons.near_me, label: 'ROUTE'),
+      _buildButtonColumn(
+          color: Colors.blue, icon: Icons.near_me, label: 'ROUTE'),
       _buildButtonColumn(color: Colors.blue, icon: Icons.share, label: 'SHARE'),
     ],
   );
@@ -108,6 +106,52 @@ class MyApp extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class FavoriteWidget extends StatefulWidget {
+  FavoriteWidget({Key? key}) : super(key: key);
+
+  @override
+  _FavoriteWidgetState createState() => _FavoriteWidgetState();
+}
+
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  bool _isFavorited = true;
+  int _favoriteCount = 41;
+
+  void _toggleFavorite() {
+    setState(() {
+      _isFavorited
+          ? _favoriteCount = _favoriteCount - 1
+          : _favoriteCount = _favoriteCount + 1;
+      _isFavorited = !_isFavorited;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(0),
+          child: IconButton(
+            padding: const EdgeInsets.all(0),
+            alignment: Alignment.centerRight,
+            icon: (_isFavorited ? Icon(Icons.star) : Icon(Icons.star_border)),
+            color: Colors.red[500],
+            onPressed: _toggleFavorite,
+          ),
+        ),
+        SizedBox(
+          width: 18,
+          child: SizedBox(
+            child: Text('$_favoriteCount'),
+          ),
+        ),
+      ],
     );
   }
 }
