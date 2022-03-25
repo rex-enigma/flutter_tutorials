@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
   }
 
   late Widget buttonSection = Row(
-    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
       _buildButtonColumn(color: Colors.blue, icon: Icons.call, label: 'CALL'),
       _buildButtonColumn(color: Colors.blue, icon: Icons.near_me, label: 'ROUTE'),
@@ -88,13 +88,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(context is Element);
     return MaterialApp(
       title: 'Flutter Layout demo',
       home: Scaffold(
         appBar: AppBar(
           title: Text('Flutter Layout demo'),
         ),
-        body: Column(
+        body: ListView(
           children: [
             Image.asset(
               'images/lake.jpg',
