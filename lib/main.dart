@@ -11,6 +11,9 @@ import 'package:layout_test/state_management.dart';
 //using named route(Navigator.pushNamed()) to navigate to the next route(SecondRoute).
 //also ModalRoute.of(context) is used to pass argument to the named route.
 //comment Navigator.push()in FirstRoute class to test the named route.
+//uncomment Navigator.pushNamed() in FirstRoute class to test navigation
+//uncomment ModalRoute.of(Context) and child widgets that uses it in SecondRoute class to test navigation
+
 // void main() {
 //   runApp(MaterialApp(
 //     title: 'Flutter Layout demo',
@@ -25,15 +28,17 @@ import 'package:layout_test/state_management.dart';
 //used by using.navigator_api.dart.
 //using Navigator.push().
 //comment Navigator.pushNamed() in FirstRoute class to test navigation
-//comment ModalRoute.of(Context) in SecondRoute class to test navigation
-void main() {
-  runApp(MaterialApp(
-    title: 'Flutter Layout demo',
-    home: FirstRoute(),
-  ));
-}
+//comment ModalRoute.of(Context) and child widgets that uses it in SecondRoute class to test navigation
+
+// void main() {
+//   runApp(MaterialApp(
+//     title: 'Flutter Layout demo',
+//     home: FirstRoute(),
+//   ));
+// }
 
 // used by state_management.dart
+
 // void main() {
 //   runApp(MaterialApp(
 //     title: 'Flutter Layout demo',
@@ -42,6 +47,7 @@ void main() {
 // }
 
 // used by sending_data_to_a_new_screen.dart
+
 // void main() {
 //   runApp(MaterialApp(
 //     title: 'flutter sending data to the next screen demo',
@@ -50,6 +56,7 @@ void main() {
 // }
 
 // // used by returning_data_from_a_screen.dart
+
 // void main() {
 //   runApp(MaterialApp(
 //     title: 'flutter sending data to the next screen demo',

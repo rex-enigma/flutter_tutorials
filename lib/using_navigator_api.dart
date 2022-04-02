@@ -175,7 +175,7 @@ class SecondRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     //Extract arguments from the current ModalRoute
     //settings 'property' and cast then as ScreenArguments
-    final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
+    // final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
     return Scaffold(
       appBar: AppBar(
@@ -184,8 +184,8 @@ class SecondRoute extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text(args.title),
-            Text(args.message),
+            // Text(args.title),
+            // Text(args.message),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
