@@ -57,9 +57,9 @@ import 'package:layout_test/state_management.dart';
 
 // // used by returning_data_from_a_screen.dart
 
-// void main() {
-//   runApp(MaterialApp(
-//     title: 'flutter sending data to the next screen demo',
-//     home: const HomeScreen(),
-//   ));
-// }
+void main() {
+  runApp(MaterialApp(
+    title: 'flutter sending data to the next screen demo',
+    home: const HomeScreen(),
+  ));
+}

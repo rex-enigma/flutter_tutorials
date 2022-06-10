@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 //this widget uses Navigator.push or Navigator.pushNamed to navigate to the next route(SecondRoute)
-
 class FirstRoute extends StatelessWidget {
   FirstRoute({Key? key}) : super(key: key);
 

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-// a mix and match approach of managing state.
-// 1:parent managing the widget's state. In this case the 'active'
-// 2:widget managing its own state. In this case 'highlight'
+// 1: parent managing the widget's state. In this case the 'active'
+// 2: widget managing its own state. In this case 'highlight'
+// 3: a mix and match approach of managing state.
 
 class ParentWidget extends StatefulWidget {
   ParentWidget({Key? key}) : super(key: key);
 
   @override
-  createState() => (ParentWidgetState());
+  createState() => ParentWidgetState();
 }
 
 class ParentWidgetState extends State<ParentWidget> {
