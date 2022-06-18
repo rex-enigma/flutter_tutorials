@@ -69,7 +69,7 @@ class SelectionScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  //close the screen and return 'yap' as the result
+                  //close the screen and return 'true' as the result
                   Navigator.pop<bool>(context, true);
                 },
                 child: const Text('make the HomeScreen star completely red'),
@@ -79,7 +79,7 @@ class SelectionScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
-                  //close the screen and return 'Nope' as the result
+                  //close the screen and return 'false' as the result
                   Navigator.pop<bool>(context, false);
                 },
                 child: const Text('make the HomeScreen star border red '),
@@ -93,7 +93,7 @@ class SelectionScreen extends StatelessWidget {
 }
 
 //////////////////////////////////////////
-//this one was a snackbar example. Showing true of false depending on which type of value returned
+//this one was a snackbar example. Showing true or false depending on which type of value returned
 //by Navigator.pop(context,value).
 
 // class HomeScreen extends StatelessWidget {

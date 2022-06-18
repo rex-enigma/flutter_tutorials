@@ -8,7 +8,7 @@ class Todo {
   Todo({required this.title, required this.description});
 }
 
-class TodosScreen extends StatelessWidget {
+class TodosScreenB extends StatelessWidget {
   final todos = List.generate(
       20,
       (i) => Todo(
@@ -26,8 +26,17 @@ class TodosScreen extends StatelessWidget {
           return ListTile(
             title: Text(todos[index].title),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => DetailTodoScreen(todo: todos[index])));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailTodoScreen(),
+                  //pass the arguments as part of the RouteSettings. The
+                  //DetailScreen reads the arguments from these settings.
+                  settings: RouteSettings(
+                    arguments: todos[index],
+                  ),
+                ),
+              );
             },
           );
         },
@@ -37,12 +46,12 @@ class TodosScreen extends StatelessWidget {
 }
 
 class DetailTodoScreen extends StatelessWidget {
-  DetailTodoScreen({Key? key, required this.todo}) : super(key: key);
-
-  final Todo todo;
-
   @override
   Widget build(BuildContext context) {
+    //Extract arguments from the current ModalRoute
+    //settings 'property' and cast then as Todo
+    final todo = ModalRoute.of(context)!.settings.arguments as Todo;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(todo.title),

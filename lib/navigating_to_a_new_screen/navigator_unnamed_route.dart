@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-//this widget uses Navigator.push or Navigator.pushNamed to navigate to the next route(SecondRoute)
+// at line 102, used unnamed routing mechanism from navigator api
+
 class FirstRoute extends StatelessWidget {
   FirstRoute({Key? key}) : super(key: key);
 
@@ -100,9 +101,6 @@ class FirstRoute extends StatelessWidget {
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (BuildContext context) => (const SecondRoute())));
-              // Navigator.pushNamed(context, '/second',
-              //     arguments: ScreenArguments('settings for second route',
-              //         'this message is extracted in the build method'));
             },
             child: const Text('Go to the second Route'),
           ),
@@ -110,14 +108,6 @@ class FirstRoute extends StatelessWidget {
       ),
     );
   }
-}
-
-//passing ScreenArguments as argument parameter to the Navigator.pushNamed static function
-class ScreenArguments {
-  final String title;
-  final String message;
-
-  ScreenArguments(this.title, this.message);
 }
 
 class FavoriteWidget extends StatefulWidget {
@@ -172,10 +162,6 @@ class SecondRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Extract arguments from the current ModalRoute
-    //settings 'property' and cast then as ScreenArguments
-    // final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Second Route'),
@@ -183,8 +169,6 @@ class SecondRoute extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            // Text(args.title),
-            // Text(args.message),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
